@@ -1,0 +1,125 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+  <head>
+    <meta charset="utf-8">
+    <title>Ejemplo Jquery Flip</title>
+    <script src="js/jquery-3.3.1.min.js" type="text/javascript"></script>
+    <script src="js/jquery.flip.min.js.descarga"></script>
+
+    <script>
+    $(document).ready(function(){
+      $("#flip").click(function(){
+        $("#pane1").slideDown("slow");
+      });
+    });
+    </script>
+
+    <script>
+    $(function(){
+      $(".flip-horizontal").flip({
+        trigger: 'hover'
+    });
+    $(".flip-vertical").flip({
+      axis: 'x',
+        trigger: 'hover'
+    });
+    });
+    </script>
+
+    <script>
+    $(document).ready(function(){
+        $("#hide1, #hide2").click(function(){
+            $("p").hide();
+        });
+        $("#show1, #show2").click(function(){
+            $("p").show();
+        });
+    });
+    </script>
+
+    <script >
+    $(document).ready(function(){
+       $("a").click(function(evento){
+          alert("Has pulsado el enlace...");
+       });
+    });
+    </script>
+
+
+    <style >
+      #pane1, #flip{
+        padding: 5px;
+        text-align: center;
+        background: linear-gradient(30deg, crimson,sienna, royalblue, indianred, purple);
+        border: solid 3px #EEE94A;
+      }
+      #pane1{
+        padding: 100px;
+        display: none;
+      }
+
+      body{
+      	font-family:'Open Sans',sans-serif;
+      	margin-top: 50px;
+      	text-align: center;
+        background: #EA8915;
+      }
+
+      #flip-this {
+      	height: 199px;
+          width: 300px;
+          margin: 0 auto;
+      }
+
+      #flip-this img {
+      	width: 300px;
+      	height: auto;
+      }
+
+      #flip-this .back {
+          background: #2184cd;
+          color: #fff;
+          text-align: center;
+      }
+      input{
+        height: 20px;
+      }
+      h2{
+        color: brown;
+      }
+    </style>
+  </head>
+  <body>
+    <div id="flip">Haz Click Para Deslizar El Panel Hacia Abajo</div>
+    <div id="pane1">Aprende màs aqui!!<br><br>
+    <a href="https://jquery.com/">jquery</a></div>
+
+
+    <h2>Horizontal Flip</h2>
+
+    <div id="flip-this" class="flip-horizontal" style="perspective: 600px; position: relative; transform-style: preserve-3d;">
+        <div class="front" style="height: 100%; width: 100%; backface-visibility: hidden; transform-style: preserve-3d; position: absolute; z-index: 1; transition: all 0.5s ease-out 0s; transform: rotateY(0deg);">
+          <img src="imagen/pand.jpg" alt="" style="backface-visibility: hidden;">
+        </div>
+        <div class="back" style="transform: rotateY(-180deg); height: 100%; width: 100%; backface-visibility: hidden; transform-style: preserve-3d; position: absolute; z-index: 0; transition: all 0.5s ease-out 0s;">
+          <p style="backface-visibility: hidden;">Este Es Un Lindo Mensaje :)</p>
+          <button id="show1">mostrar</button>
+          <button id="hide1">ocultar</button>
+        </div>
+      </div>
+
+      <h2>Vertical Flip</h2>
+
+    	<div id="flip-this" class="flip-vertical" style="perspective: 398px; position: relative; transform-style: preserve-3d;">
+      		<div class="front" style="height: 100%; width: 100%; backface-visibility: hidden; transform-style: preserve-3d; position: absolute; z-index: 1; transition: all 0.5s ease-out 0s; transform: rotateX(0deg);">
+        		<img src="imagen/imag.jpg"< alt="" style="backface-visibility: hidden;">
+      		</div>
+      		<div class="back" style="transform: rotateX(-180deg); height: 100%; width: 100%; backface-visibility: hidden; transform-style: preserve-3d; position: absolute; z-index: 0; transition: all 0.5s ease-out 0s;">
+        		<p style="backface-visibility: hidden;">jQuery es una biblioteca multiplataforma de JavaScript, que permite simplificar la manera de interactuar con los documentos HTML.</p>
+            <button id="show2">mostrar</button>
+            <button id="hide2">ocultar</button>
+      		</div>
+        </div>
+
+      </body>
+      </html>
